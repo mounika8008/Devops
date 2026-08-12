@@ -1,0 +1,19 @@
+{
+  "name": "student-course-app",
+  "version": "1.0.0",
+  "description": "Docker Student Course Application",
+  "main": "app.js",
+
+  "scripts": {
+    "start": "node app.js"
+  },
+
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "pg": "^8.12.0"
+  }
+}

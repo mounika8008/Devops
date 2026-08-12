@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Dashboardchanged</title>
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+
+Welcome <%= student.username %>
+
+</h1>
+
+<h2>
+
+Available Courses
+
+</h2>
+
+<form action="/enroll" method="POST">
+
+<% courses.forEach(course => { %>
+
+<div>
+
+<input
+type="checkbox"
+name="course"
+value="<%= course.id %>">
+
+<%= course.course_name %>
+
+</div>
+
+<% }) %>
+
+<br>
+
+<button>
+
+Enroll
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>
