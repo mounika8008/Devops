@@ -2,10 +2,7 @@ services:
 
   jenkins:
 
-    build:
-      context: .
-      args:
-        DOCKER_GID: 993
+    build: .
 
     container_name: jenkins
 
