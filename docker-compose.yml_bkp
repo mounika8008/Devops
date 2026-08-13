@@ -1,7 +1,12 @@
+
 services:
 
   postgres:
+
     image: postgres:17
+
+    container_name: postgres-db
+
     restart: always
 
     environment:
@@ -13,11 +18,14 @@ services:
       - "5432:5432"
 
     volumes:
-      - postgres_data:/var/lib/postgresql/data
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   nodeapp:
+
     build: ./frontend
+
+    container_name: node-frontend
+
     restart: always
 
     ports:
@@ -32,8 +40,3 @@ services:
       DB_USER: postgres
       DB_PASSWORD: postgres
       DB_NAME: studentdb
-
-volumes:
-  postgres_data:
-    external: true
-    name: ae43440f493645c514790e150213f6d49099e614999c47ab54b10164ab555ba0
