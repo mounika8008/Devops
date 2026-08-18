@@ -9,9 +9,6 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: studentdb
 
-    ports:
-      - "5432:5432"
-
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -34,6 +31,7 @@ services:
       DB_NAME: studentdb
 
 volumes:
+
   postgres_data:
     external: true
     name: ae43440f493645c514790e150213f6d49099e614999c47ab54b10164ab555ba0
